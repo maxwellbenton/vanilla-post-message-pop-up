@@ -30,13 +30,7 @@ window.addEventListener('message', ({ source, data, origin }) => {
 })
 
 function init() {
-  const readyMessage = JSON.stringify({
-    'mastercard.src.sdk.tpw': {
-      id: 'ready123',
-      topic: 'TPW_DCF_READY',
-      procedure: 'over'
-    }
-  })
+  const readyMessage = '{"mastercard.src.sdk.tpw":{"id":"ready123","topic":"TPW_DCF_READY","procedure:"over"}}'
 
   const actionMessageObject = JSON.stringify({
     'mastercard.src.sdk.tpw': {
