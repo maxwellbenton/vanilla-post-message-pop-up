@@ -5,9 +5,8 @@ const cancelButton = document.querySelector('#cancel')
 
 function updateStateData(newData) {
   console.warn('current state.data', JSON.stringify(state.data))
-  console.warn('new state.data', JSON.stringify(newData))
-  
   state.data = newData
+  console.warn('new state.data', JSON.stringify(state.data))
 }
 
 window.addEventListener('message', (event) => {
@@ -18,7 +17,7 @@ window.addEventListener('message', (event) => {
     const data = parsedData[namespace]
     if (data.replyTo === 'ready123' && data.topic === 'TPW_DCF_READY' && data.procedure === 'out') {
       console.warn('READY data response received')
-      state.data = data.payload
+      updateStateData(data.payload)
     }
 
     if (data.replyTo === 'action123' && data.topic === 'TPW_DCF_ACTION' && data.procedure === 'out') {
