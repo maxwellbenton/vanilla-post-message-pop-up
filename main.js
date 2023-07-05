@@ -10,9 +10,10 @@ function updateStateData(newData) {
   state.data = newData
 }
 
-window.addEventListener('message', ({ source, data, origin }) => {
+window.addEventListener('message', (event) => {
   try {
-    const parsedData = JSON.parse(data)
+    console.log('message', event)
+    const parsedData = JSON.parse(event.data)
     const namespace = Object.keys(parsedData)[0]
     const data = parsedData[namespace]
     if (data.replyTo === 'ready123' && data.topic === 'TPW_DCF_READY' && data.procedure === 'out') {
