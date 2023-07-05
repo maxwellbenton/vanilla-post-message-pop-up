@@ -53,3 +53,5 @@ function init() {
     (window.opener || window.parent).postMessage(actionMessage, '*')
   })
 }
+
+init()
