@@ -49,6 +49,7 @@ function init() {
   (window.opener || window.parent).postMessage(readyMessage, '*')
 
   cancelButton.addEventListener('click', () => {
+    console.warn('CLICKED')
     (window.opener || window.parent).postMessage(actionMessage, '*')
   })
 }
