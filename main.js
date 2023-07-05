@@ -33,7 +33,7 @@ window.addEventListener('message', (event) => {
 function init() {
   const readyMessage = '{"mastercard.src.sdk.tpw":{"id":"ready123","topic":"TPW_DCF_READY","procedure":"over"}}'
 
-  const actionMessageObject = '{"mastercard.src.sdk.tpw":{"id":"action123","topic":"TPW_DCF_ACTION","procedure":"over"}}'
+  const actionMessage = '{"mastercard.src.sdk.tpw":{"id":"action123","topic":"TPW_DCF_ACTION","procedure":"over"}}'
   const targetWindow = window.opener || window.parent
   targetWindow.postMessage(readyMessage, '*')
 
